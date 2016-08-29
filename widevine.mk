@@ -6,7 +6,7 @@ CUR_PATH := vendor/widevine
 #######################################################
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3399)
 PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3399/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
-                     vendor/widevine/lib64/arm/rk3399/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+                     vendor/widevine/lib/arm/rk3399/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
                      vendor/widevine/lib/arm/rk3399/libwvm.so:system/vendor/lib/libwvm.so
 else
 PRODUCT_COPY_FILES += vendor/widevine/lib/arm/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
