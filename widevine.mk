@@ -4,7 +4,7 @@ CUR_PATH := vendor/widevine
 ########################################################
 #add drm function
 #######################################################
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3126c)
 PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3126/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
                      vendor/widevine/lib/arm/rk3126/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
                      vendor/widevine/lib/arm/rk3126/libwvm.so:system/vendor/lib/libwvm.so
