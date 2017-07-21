@@ -9,6 +9,11 @@ PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3126/libdrmdecrypt.so:system/lib
                      vendor/widevine/lib/arm/rk3126/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
                      vendor/widevine/lib/arm/rk3126/libwvm.so:system/vendor/lib/libwvm.so
 endif
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
+PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3288/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
+                     vendor/widevine/lib/arm/rk3288/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+                     vendor/widevine/lib/arm/rk3288/libwvm.so:system/vendor/lib/libwvm.so
+endif
 PRODUCT_COPY_FILES += vendor/widevine/lib/arm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
                      vendor/widevine/lib/arm/libwvdrm_L3.so:system/vendor/lib/libwvdrm_L3.so \
                      vendor/widevine/lib/arm/libWVStreamControlAPI_L3.so:system/vendor/lib/libWVStreamControlAPI_L3.so \
