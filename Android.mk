@@ -1,0 +1,77 @@
+LOCAL_PATH := $(call my-dir)
+my_archs := arm arm64 x86 x86_64
+my_src_arch := $(call get-prebuilt-src-arch, $(my_archs))
+
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3126c)
+  my_soc := rk3126
+else ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
+  my_soc := rk3288
+else
+  $(error Unknown $(strip $(TARGET_BOARD_PLATFORM)).)
+endif
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libdrmdecrypt
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(my_soc)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libdrmwvmplugin
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(my_soc)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libwvm
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(my_soc)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libwvdrmengine
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libwvdrm_L3
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libWVStreamControlAPI_L3
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := lib/$(my_src_arch)/$(LOCAL_MODULE).so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
