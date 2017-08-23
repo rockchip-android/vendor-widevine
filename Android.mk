@@ -7,7 +7,7 @@ ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3126c)
 else ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
   my_soc := rk3288
 else
-  $(error Unknown $(strip $(TARGET_BOARD_PLATFORM)).)
+  $(info $(strip $(TARGET_BOARD_PLATFORM)) not yet support widevine.)
 endif
 
 include $(CLEAR_VARS)
