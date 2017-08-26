@@ -1,3 +1,5 @@
+ifeq ($(strip $(BUILD_WITH_WIDEVINE)), true)
+
 LOCAL_PATH := $(call my-dir)
 my_archs := arm arm64 x86 x86_64
 my_src_arch := $(call get-prebuilt-src-arch, $(my_archs))
@@ -77,3 +79,4 @@ LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
+endif
