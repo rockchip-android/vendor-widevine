@@ -29,6 +29,7 @@ LOCAL_SRC_FILES := lib/$(my_src_arch)/$(my_soc)/$(LOCAL_MODULE).so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
 LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_RELATIVE_PATH := drm
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -51,6 +52,7 @@ LOCAL_SRC_FILES := lib/$(my_src_arch)/$(LOCAL_MODULE).so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_TARGET_ARCH := $(my_src_arch)
 LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_RELATIVE_PATH := mediadrm
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
