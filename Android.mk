@@ -1,5 +1,4 @@
 LOCAL_PATH := $(call my-dir)
-ifeq ($(strip $(BUILD_WITH_WIDEVINE)), true)
 
 ifeq ($(BOARD_WIDEVINE_OEMCRYPTO_LEVEL), 3)
 
@@ -108,4 +107,3 @@ include $(BUILD_PREBUILT)
 
 endif
 
-endif
